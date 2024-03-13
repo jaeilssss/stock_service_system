@@ -33,17 +33,18 @@ public class SpringSecurityConfig {
                 .build();
     }
 
-    @Bean
-    public AuthenticationManager authenticationManager(
-            HttpSecurity httpSecurity,
-            BCryptPasswordEncoder bCryptPasswordEncoder,
-            UserDetailsService userDetailsService
-    ) throws Exception {
-        return httpSecurity
-                .getSharedObject(AuthenticationManagerBuilder.class)
-                .userDetailsService(service)
-                .passwordEncoder(bCryptPasswordEncoder);
-    }
+    //인증 관리자 관련 설정
+//    @Bean
+//    public AuthenticationManager authenticationManager(
+//            HttpSecurity httpSecurity,
+//            BCryptPasswordEncoder bCryptPasswordEncoder,
+//            UserDetailsService userDetailsService
+//    ) throws Exception {
+//        return httpSecurity
+//                .getSharedObject(AuthenticationManagerBuilder.class)
+//                .userDetailsService(service)
+//                .passwordEncoder(bCryptPasswordEncoder);
+//    }
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
